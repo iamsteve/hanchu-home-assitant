@@ -18,7 +18,7 @@ This project uses **Selenium + FastAPI** to log into a website, scrape energy us
 ### 1. Clone the Repo
 
 ```bash
-git clone https://github.com/your-username/hanchu-scraper.git
+git clone https://github.com/iamsteve/hanchu-scraper.git
 cd hanchu-scraper
 ```
 
@@ -29,7 +29,7 @@ Create a `.env` file in the `app/` folder:
 ```env
 HANCHU_USERNAME=your_username
 HANCHU_PASSWORD=your_password
-LOGIN_URL=https://example.com/login
+LOGIN_URL=https://iess3.hanchuess.com/login
 ```
 
 > 🔐 Never share your `.env` file publicly.
