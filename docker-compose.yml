@@ -1,0 +1,11 @@
+services:
+  hanchu-scraper:
+    build: .
+    container_name: hanchu-scraper
+    ports:
+      - "5322:5322"
+    env_file:
+      - ./app/.env
+    volumes:
+      - ./app:/app
+    restart: unless-stopped
