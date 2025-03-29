@@ -68,7 +68,6 @@ def login(driver):
     wait.until(EC.presence_of_element_located((By.ID, "account"))).find_element(By.TAG_NAME, "input").send_keys(USERNAME)
     wait.until(EC.presence_of_element_located((By.ID, "pwd"))).find_element(By.TAG_NAME, "input").send_keys(PASSWORD)
     wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "login-btn"))).click()
-    logging.info("Login successful.")
 
 def extract_float(text):
     try:
@@ -100,11 +99,11 @@ def fetch_data(driver):
 
     for img in stream_images:
         src = img.get_attribute("src")
-        if "grid in" in src:
+        if "grid-in" in src:
             grid_status = "Importing"
             grid_usage = extract_float(spans[5].text)
             break
-        elif "grid out" in src:
+        elif "grid-out" in src:
             grid_status = "Exporting"
             grid_production = extract_float(spans[5].text)
             break
@@ -116,9 +115,9 @@ def fetch_data(driver):
     battery_import = 0.0
     battery_flow = extract_float(spans[7].text)
 
-    if bat_status == "Charging":
+    if bat_status == "Charge":
         battery_import = battery_flow
-    elif bat_status == "Discharging":
+    elif bat_status == "Discharge":
         battery_export = battery_flow
 
     unit_multiplier = WATT_CONVERSION if unit == "W" else 1
