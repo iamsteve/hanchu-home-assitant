@@ -163,7 +163,7 @@ hanchu-scraper/
 ---
 
 ## ⚙️ Troubleshooting
-
+- **Running Home Assistant in Docker?** Make sure you make your docker network available between containers, and when referencing the IP of the scraper, use the container name.
 - **Chrome errors?** Make sure your Dockerfile has the correct Chromium and `chromedriver` installed.
 - **Login issues?** Confirm your credentials and `LOGIN_URL` are correct in the `.env` file.
 - **Permission denied on `.env`?** Ensure the file is readable inside the container (`chmod 644 app/.env`).
