@@ -55,7 +55,7 @@ docker-compose up -d
 Once running, visit:
 
 ```
-http://localhost:5322/api/data
+http://<your_ip_or_hostname>:5322/api/data
 ```
 
 This will return JSON like:
