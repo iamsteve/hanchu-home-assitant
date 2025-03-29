@@ -62,12 +62,70 @@ This will return JSON like:
 
 ```json
 {
-    "PV Draw": "500 W",
-    "Home Use": "450 W",
-    "Grid": "50 W",
-    "Battery": "90 %"
+  "solar_production": "0.000",
+  "home_usage": "0.00432",
+  "grid_status": "Idle",
+  "grid_usage": "0.000",
+  "grid_production": "0.000",
+  "battery_export": "0.000",
+  "battery_import": "0.000",
+  "battery_status": "Discharge",
+  "battery_percentage": "67"
 }
 ```
+
+---
+
+## 🏠 Home Assistant Integration
+
+To integrate this scraper with Home Assistant, add the following RESTful sensors to your `configuration.yaml`.  
+Replace the URL with the IP or hostname of the device running the scraper (e.g. `http://localhost:5322/api/data`).
+
+```yaml
+rest:
+  resource: http://<your_ip_or_hostname>:5322/api/data
+  sensor:
+    - name: "Solar Production"
+      value_template: "{{ value_json.solar_production }}"
+      device_class: "energy"
+      unit_of_measurement: "kWh"
+      state_class: "total_increasing"
+    - name: "Home Usage"
+      value_template: "{{ value_json.home_usage }}"
+      device_class: "energy"
+      unit_of_measurement: "kWh"
+      state_class: "total_increasing"
+    - name: "Grid Status"
+      value_template: "{{ value_json.grid_status }}"
+    - name: "Grid Import"
+      value_template: "{{ value_json.grid_usage }}"
+      device_class: "energy"
+      unit_of_measurement: "kWh"
+      state_class: "total_increasing"
+    - name: "Grid Export"
+      value_template: "{{ value_json.grid_production }}"
+      device_class: "energy"
+      unit_of_measurement: "kWh"
+      state_class: "total_increasing"
+    - name: "Battery Discharge"
+      value_template: "{{ value_json.battery_export }}"
+      device_class: "energy"
+      unit_of_measurement: "kWh"
+      state_class: "total_increasing"
+    - name: "Battery Charge"
+      value_template: "{{ value_json.battery_import }}"
+      device_class: "energy"
+      unit_of_measurement: "kWh"
+      state_class: "total_increasing"
+    - name: "Battery Status"
+      value_template: "{{ value_json.battery_status }}"
+    - name: "Battery Level"
+      value_template: "{{ value_json.battery_level }}"
+      device_class: "battery"
+      unit_of_measurement: "%"
+```
+
+> 💡 Don’t forget to restart Home Assistant after updating your configuration!
 
 ---
 
