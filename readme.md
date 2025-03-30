@@ -1,6 +1,6 @@
 # ⚡ Hanchu Scraper
 
-This project uses **Selenium + FastAPI** to log into a website, scrape energy usage data, and serve it via a simple API. It's Dockerized using **Docker Compose** so you can run it easily.
+This project uses **Selenium + FastAPI** to log into a website, scrape energy usage data, and serve it via a simple API. It's Dockerized using **Docker Compose** so you can run it easily. I also include the RESTful api configuration to allow the API to integrate directly into home assistant.
 
 <a href="https://buymeacoffee.com/codenamechicken" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
 
