@@ -1,4 +1,4 @@
-# ⚡ Hanchu Scraper
+# ⚡ Hanchu Home Assistant Integration 
 
 This project uses **Selenium + FastAPI** to log into a website, scrape energy usage data, and serve it via a simple API. It's Dockerized using **Docker Compose** so you can run it easily. I also include the RESTful api configuration to allow the API to integrate directly into home assistant.
 
