@@ -18,7 +18,7 @@ This project uses **Selenium + FastAPI** to log into a website, scrape energy us
 ### 1. Clone the Repo
 
 ```bash
-git clone https://github.com/iamsteve/hanchu-scraper.git
+git clone https://github.com/iamsteve/hanchu-home-assistant.git
 cd hanchu-scraper
 ```
 
