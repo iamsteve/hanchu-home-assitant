@@ -19,7 +19,7 @@ This project uses **Selenium + FastAPI** to log into a website, scrape energy us
 
 ```bash
 git clone https://github.com/iamsteve/hanchu-home-assistant.git
-cd hanchu-scraper
+cd hanchu-home-assistant
 ```
 
 ### 2. Set Environment Variables
